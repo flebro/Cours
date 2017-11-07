@@ -40,10 +40,18 @@ namespace FileWatcherTest
             InputDirectoryPath = inputDirectoryPath;
             OutputDirectoryPath = outputDirectoryPath;
 
-            if (string.IsNullOrWhiteSpace(InputDirectoryPath) || Directory.)
+            if (string.IsNullOrWhiteSpace(InputDirectoryPath))
             {
                 throw new ArgumentException("Paramètre null ou vide", nameof(inputDirectoryPath));
             }
+
+            if (string.IsNullOrWhiteSpace(OutputDirectoryPath))
+            {
+                throw new ArgumentException("Paramètre null ou vide", nameof(outputDirectoryPath));
+            }
+
+            Directory.CreateDirectory(inputDirectoryPath);
+            Directory.CreateDirectory(outputDirectoryPath);
 
         }
 
