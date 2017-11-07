@@ -37,8 +37,8 @@ namespace FileWatcherTest
         /// <param name="outputDirectoryPath">Répertoire de sortie</param>
         public FileWatcherCore(string inputDirectoryPath, string outputDirectoryPath)
         {
-            InputDirectoryPath = inputDirectoryPath;
-            OutputDirectoryPath = outputDirectoryPath;
+            InputDirectoryPath = Environment.ExpandEnvironmentVariables(inputDirectoryPath);
+            OutputDirectoryPath = Environment.ExpandEnvironmentVariables(outputDirectoryPath);
 
             if (string.IsNullOrWhiteSpace(InputDirectoryPath))
             {
