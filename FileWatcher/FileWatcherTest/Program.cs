@@ -11,6 +11,7 @@ namespace FileWatcherTest
         static void Main(string[] args)
         {
             Console.Out.Write("test");
+            Console.ReadKey();
         }
     }
 }
